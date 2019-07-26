@@ -24,4 +24,18 @@ vi /etc/hosts
 >192.168.249.133		k8s-worker-node-1	k8s-worker-node-1.formini.dz  
 >192.168.249.134		k8s-worker-node-2	k8s-worker-node-2.formini.dz  
 
-d
+## ajouter le repository de kubernetes
+créer le fichier repository pour kubernetes
+```shell
+vi /etc/yum.repos.d/kubernetes.repo
+```
+>[kubernetes]  
+>name=Kubernetes  
+>baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64  
+>enabled=1  
+>gpgcheck=0  
+
+## installation des packages kubernetes
+```shell
+yum -y install kubelet kubeadm kubectl
+```
