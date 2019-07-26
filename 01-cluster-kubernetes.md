@@ -1,6 +1,6 @@
-# Preparation de des VMs
+# Preparation all VMs
+## prérequis network plugin
 ```shell
-## 
 vi /etc/sysctl.d/k8s.conf
 ```
 ```shell
