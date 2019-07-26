@@ -56,3 +56,8 @@ veuillez récupérer le token pour la jonction des worker ultérieurement
 >kubeadm join 192.168.249.132:6443 --token z0bhwc.nw3fkfz0q6g5xrq0 \  
 >    --discovery-token-ca-cert-hash sha256:e3f1bd2f3536118fca1f2af754b62e794b3485b8b1365d714510308526372158  
 
+### pour exploiter l'API kubernetes par votre simple utilisateur 
+>mkdir -p $HOME/.kube  
+>cp -i /etc/kubernetes/admin.conf $HOME/.kube/config  
+>chown $(id -u):$(id -g) $HOME/.kube/config  
+ceci vous fera éviter d'exporter la variable `export KUBECONFIG=/etc/kubernetes/admin.conf` à chaque ouverture de session
