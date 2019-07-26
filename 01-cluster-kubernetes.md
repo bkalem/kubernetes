@@ -94,10 +94,11 @@ yum install kubelet kubeadm kubectl
 systemctl enable kubelet && systemctl start kubelet
 ```
 ### joindre les worker nodes to master k8s
-***si vous n'avez pas garder le token générer lors de l'initiation du master, la commande `kubeadm token create --print-join-command` vous permez de récupérer le toket***
+***si vous n'avez pas garder le token générer lors de l'initiation du master, 
+la commande `kubeadm token create --print-join-command` vous permez de récupérer le toket***
 ```shell
->kubeadm join 192.168.249.132:6443 --token z0bhwc.nw3fkfz0q6g5xrq0 \  
->    --discovery-token-ca-cert-hash sha256:e3f1bd2f3536118fca1f2af754b62e794b3485b8b1365d714510308526372158  
+kubeadm join 192.168.249.132:6443 --token z0bhwc.nw3fkfz0q6g5xrq0 \  
+    --discovery-token-ca-cert-hash sha256:e3f1bd2f3536118fca1f2af754b62e794b3485b8b1365d714510308526372158  
 ```
 puis verifier l'état de notre cluster
 ```shell
