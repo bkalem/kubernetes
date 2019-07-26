@@ -60,4 +60,5 @@ veuillez récupérer le token pour la jonction des worker ultérieurement
 >mkdir -p $HOME/.kube  
 >cp -i /etc/kubernetes/admin.conf $HOME/.kube/config  
 >chown $(id -u):$(id -g) $HOME/.kube/config  
-ceci vous fera éviter d'exporter la variable `export KUBECONFIG=/etc/kubernetes/admin.conf` à chaque ouverture de session
+
+Ceci vous fera éviter d'exporter la variable `export KUBECONFIG=/etc/kubernetes/admin.conf` à chaque ouverture de session
