@@ -62,3 +62,9 @@ veuillez récupérer le token pour la jonction des worker ultérieurement
 >chown $(id -u):$(id -g) $HOME/.kube/config  
 
 Ceci vous fera éviter d'exporter la variable `export KUBECONFIG=/etc/kubernetes/admin.conf` à chaque ouverture de session
+### préparer le réseau flannel
+mettre en place un réseau [flannel](https://coreos.com/flannel/docs/latest/?source=post_page---------------------------) pour les pods
+```shell
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml
+```
