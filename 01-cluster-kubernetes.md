@@ -100,15 +100,17 @@ systemctl enable kubelet && systemctl start kubelet
 >    --discovery-token-ca-cert-hash sha256:e3f1bd2f3536118fca1f2af754b62e794b3485b8b1365d714510308526372158  
 ```
 puis verifier l'état de notre cluster
->[root@k8s-master ~]# export KUBECONFIG=/etc/kubernetes/admin.conf  
->[root@k8s-master ~]#  
->[root@k8s-master ~]# kubectl get nodes  
->NAME                              STATUS     ROLES    AGE     VERSION  
->k8s-master.formini.dz             Ready      master   2d22h   v1.15.1  
->k8s-worker-node-1.formini.dz      Ready      worker   2d15h   v1.15.1  
->k8s-worker-node-2.formini.dz      Ready      worker   2d15h   v1.15.1  
->k8s-worker-node-3.formini.dz      Ready      worker   2d1h    v1.15.1  
->k8s-worker-node-4.formini.dz      Ready      worker   46h     v1.15.1  
+```shell
+[root@k8s-master ~]# export KUBECONFIG=/etc/kubernetes/admin.conf  
+[root@k8s-master ~]#  
+[root@k8s-master ~]# kubectl get nodes  
+NAME                              STATUS     ROLES    AGE     VERSION  
+k8s-master.formini.dz             Ready      master   2d22h   v1.15.1  
+k8s-worker-node-1.formini.dz      Ready      worker   2d15h   v1.15.1  
+k8s-worker-node-2.formini.dz      Ready      worker   2d15h   v1.15.1  
+k8s-worker-node-3.formini.dz      Ready      worker   2d1h    v1.15.1  
+k8s-worker-node-4.formini.dz      Ready      worker   46h     v1.15.1  
+```
 
 ---------------------------------------
 [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/?source=post_page---------------------------)
