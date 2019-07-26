@@ -109,3 +109,6 @@ puis verifier l'état de notre cluster
 >k8s-worker-node-2.formini.dz      Ready      worker   2d15h   v1.15.1  
 >k8s-worker-node-3.formini.dz      Ready      worker   2d1h    v1.15.1  
 >k8s-worker-node-4.formini.dz      Ready      worker   46h     v1.15.1  
+
+---------------------------------------
+[kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/?source=post_page---------------------------)
