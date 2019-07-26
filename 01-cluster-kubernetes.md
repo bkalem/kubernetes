@@ -35,7 +35,24 @@ vi /etc/yum.repos.d/kubernetes.repo
 >enabled=1  
 >gpgcheck=0  
 
-## installation des packages kubernetes
+#Déploiement du master Kubernetes
+## on master
+### installation des packages kubernetes
 ```shell
-yum -y install kubelet kubeadm kubectl
+yum install kubelet kubeadm kubectl
 ```
+### start & enable kubelet
+```shell
+systemctl enable kubelet && systemctl start kubelet
+```
+### initiation du master k8s
+vous pouvez choisir un réseau de pod qui arrange votre architecture
+```shell
+kubeadm init --pod-network-cidr=10.244.0.0/16
+```
+veuillez récupérer le token pour la jonction des worker ultérieurement 
+>Then you can join any number of worker nodes by running the following on each as root:  
+>  
+>kubeadm join 192.168.249.132:6443 --token z0bhwc.nw3fkfz0q6g5xrq0 \  
+>    --discovery-token-ca-cert-hash sha256:e3f1bd2f3536118fca1f2af754b62e794b3485b8b1365d714510308526372158  
+
