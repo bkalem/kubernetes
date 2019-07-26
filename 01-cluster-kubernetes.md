@@ -45,7 +45,7 @@ vi /etc/yum.repos.d/kubernetes.repo
 >enabled=1  
 >gpgcheck=0  
 
-# Déploiement du master Kubernetes
+# Déploiement du cluster Kubernetes
 ## on master
 ### installation des packages kubernetes
 ```shell
