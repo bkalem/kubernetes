@@ -53,8 +53,7 @@ kubeadm init --pod-network-cidr=10.244.0.0/16
 veuillez récupérer le token pour la jonction des worker ultérieurement 
 >Then you can join any number of worker nodes by running the following on each as root:  
 >  
->kubeadm join 192.168.249.132:6443 --token z0bhwc.nw3fkfz0q6g5xrq0 \  
->    --discovery-token-ca-cert-hash sha256:e3f1bd2f3536118fca1f2af754b62e794b3485b8b1365d714510308526372158  
+>kubeadm join 192.168.249.132:6443 --token lfje7s.lvzjcyicozaqso4x     --discovery-token-ca-cert-hash sha256:e3f1bd2f3536118fca1f2af754b62e794b3485b8b1365d714510308526372158   
 
 ### pour exploiter l'API kubernetes par votre simple utilisateur 
 >mkdir -p $HOME/.kube  
@@ -63,8 +62,23 @@ veuillez récupérer le token pour la jonction des worker ultérieurement
 
 Ceci vous fera éviter d'exporter la variable `export KUBECONFIG=/etc/kubernetes/admin.conf` à chaque ouverture de session
 ### préparer le réseau flannel
-mettre en place un réseau [flannel](https://coreos.com/flannel/docs/latest/?source=post_page---------------------------){:target="_blank" rel="noopener"} pour les pods
+mettre en place un réseau [flannel](https://coreos.com/flannel/docs/latest/?source=post_page---------------------------) pour les pods
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml
+```
+### verifier l'état du master k8s
+```shell
+kubectl get nodes
+```
+
+#Déploiement des worker nodes Kubernetes
+## on worker
+### installation des packages kubernetes
+```shell
+yum install kubelet kubeadm kubectl
+```
+### start & enable kubelet
+```shell
+systemctl enable kubelet && systemctl start kubelet
 ```
