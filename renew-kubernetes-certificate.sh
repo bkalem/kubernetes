@@ -3,10 +3,10 @@
 # maintainer email : "bkalem@ios.dz"
 # Licence " CC BY-NC-SA 4.0 "
 
-echo "###############################"
+echo "################################"
 echo "Tested on Kubernetes cluster v1.16.2"
 echo "Jan 8, 2021, 7:31:49 AM"
-echo "###############################"
+echo "################################"
 
 # create a backup folder
 mkdir /tmp/backup/
